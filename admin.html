@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Administração — Mente Leve</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/mente-leve.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/admin.css">
+  <link rel="stylesheet" href="css/mente-leve-redesign.css">
+</head>
+<body class="admin-page">
+<main>
+  <header>
+    <div><p class="hl">Mente Leve</p><h1>Área de administração</h1><p>Demonstração escolar — os pedidos ficam apenas neste browser.</p></div>
+    <a class="btn bo" href="index.html">Voltar ao site</a>
+  </header>
+  <section class="panel" id="adminLoginPanel">
+    <h2>Iniciar sessão da equipa</h2>
+    <p>Entra com a conta de demonstração de admin. Esta página não oferece segurança real.</p>
+    <form id="adminLoginForm">
+      <label for="adminEmail">Email</label><input id="adminEmail" type="email" autocomplete="username" required>
+      <label for="adminPassword">Palavra-passe</label><input id="adminPassword" type="password" autocomplete="current-password" required>
+      <p class="er" id="adminLoginError" role="alert"></p>
+      <button class="btn bp" type="submit">Entrar</button>
+    </form>
+    <p class="demo-credentials">Credenciais de apresentação: <strong>admin@gmail.com</strong> / <strong>admin123</strong></p>
+  </section>
+  <button class="btn bo" id="resetDemo" type="button">Reiniciar demonstração e apagar dados</button>
+  <section class="panel" id="adminDashboard" hidden>
+    <div class="admin-card"><div><h2>Pedidos recebidos</h2><p id="adminIdentity"></p></div><div class="admin-actions"><button class="btn bo" id="refreshAdmin" type="button">Atualizar</button><button class="btn bo" id="adminLogout" type="button">Terminar sessão</button></div></div>
+    <nav class="admin-nav" aria-label="Secções de administração">
+      <a href="#adminAppointments">Consultas</a><a href="#adminMessages">Mensagens</a><a href="#adminContacts">Contactos</a>
+    </nav>
+    <p id="adminStatus" class="feature-status" role="status" aria-live="polite"></p>
+    <section class="panel" id="adminAppointments"><h2>Pedidos de consulta</h2><div class="admin-grid" id="appointmentList"></div></section>
+    <section class="panel" id="adminMessages"><h2>Mensagens</h2><p>As mensagens e respostas são apenas uma simulação local; nada é enviado.</p><div class="admin-grid" id="messageList"></div></section>
+    <section class="panel" id="adminContacts"><h2>Contactos</h2><p>Os contactos ficam apenas neste browser; nenhum email é enviado.</p><div class="admin-grid" id="contactList"></div></section>
+  </section>
+</main>
+<script src="js/demo-storage.js" defer></script>
+<script src="js/admin.js" defer></script>
+</body>
+</html>

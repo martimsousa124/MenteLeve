@@ -1,0 +1,156 @@
+html { scroll-padding-top: 88px; }
+
+.demo-banner {
+  position: relative;
+  z-index: 21;
+  padding: 9px 16px;
+  background: #fff3d4;
+  color: #514875;
+  font-size: .88rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.admin-page .demo-banner { display: none; }
+
+.resource-note {
+  max-width: 760px;
+  margin: 28px auto 0;
+  border-style: dashed;
+}
+
+.feature-panel,
+#entrar,
+#contactos {
+  scroll-margin-top: 88px;
+}
+
+.feature-panel { background: var(--bg2); }
+
+.feature-card {
+  width: min(760px, 100%);
+  margin-inline: auto;
+  padding: clamp(20px, 4vw, 36px);
+  border: 1px solid var(--ln);
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--sh);
+}
+
+.feature-card form { display: grid; gap: 10px; }
+.feature-card label { margin: 8px 0 0; }
+.feature-card input,
+.feature-card select,
+.feature-card textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--ln);
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--tx);
+  font: inherit;
+}
+.feature-card textarea { min-height: 120px; }
+.feature-card :is(input, select, textarea):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--pi) 35%, transparent);
+  border-color: var(--pi);
+}
+.feature-card :is(button, input, select, textarea):disabled {
+  cursor: not-allowed;
+  opacity: .65;
+}
+
+.auth-switch,
+.chat-toolbar,
+.form-grid {
+  display: flex;
+  gap: 14px;
+}
+.auth-switch { margin-bottom: 20px; }
+.auth-switch button[aria-selected="true"] {
+  background: var(--pi);
+  color: #fff;
+}
+.form-grid > div { flex: 1; min-width: 0; }
+.text-button,
+.lk {
+  min-height: 44px;
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--pi);
+  font: 600 .95rem Inter, sans-serif;
+  text-align: left;
+  cursor: pointer;
+}
+.text-button { justify-self: start; }
+.text-button:hover,
+.lk:hover { text-decoration: underline; }
+
+.feature-status {
+  margin: 0 0 16px;
+  color: var(--tx2);
+}
+.feature-status:empty { display: none; }
+.emergency-note {
+  margin: 18px 0 0;
+  color: var(--tx2);
+  font-size: .9rem;
+}
+.account-card { display: grid; justify-items: start; }
+.community-note {
+  padding-top: 8px;
+  color: var(--tx2);
+}
+.community-note p { margin: 8px 0 0; }
+
+.chat-toolbar {
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--ln);
+  margin-bottom: 14px;
+}
+.chat-messages {
+  display: grid;
+  gap: 10px;
+  max-height: 360px;
+  overflow: auto;
+  padding: 4px 2px 18px;
+}
+.chat-message {
+  max-width: min(90%, 560px);
+  padding: 12px 16px;
+  border-radius: 18px;
+  background: var(--bg2);
+  overflow-wrap: anywhere;
+}
+.chat-message.from-user {
+  justify-self: end;
+  background: #E6DDF8;
+}
+.chat-message p { margin: 0; white-space: pre-wrap; }
+.chat-message time {
+  display: block;
+  margin-top: 6px;
+  color: var(--tx2);
+  font-size: .78rem;
+}
+.appointment-result {
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: #E6DDF8;
+  color: var(--pd);
+}
+
+:is(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--pi) 55%, transparent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .form-grid { flex-direction: column; gap: 10px; }
+  .auth-switch { flex-wrap: wrap; }
+  .chat-toolbar { align-items: flex-start; }
+  .chat-message { max-width: 100%; }
+}

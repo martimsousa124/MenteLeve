@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 440" role="img" aria-label="Ilustração de uma pessoa sentada a descansar, rodeada de folhas">
+  <path d="M70 230C40 130 130 40 250 50s190 80 170 190-90 170-200 170S100 330 70 230Z" fill="#C2DDAE" opacity=".6"/>
+  <circle cx="400" cy="90" r="26" fill="#EBDFCE" opacity=".8"/>
+  <circle cx="70" cy="120" r="14" fill="#B49CCE" opacity=".72"/>
+  <path d="M90 400c10-90 40-150 90-190M110 330c-30-10-45-30-45-55 30 5 45 25 45 55Zm25-60c-25-12-35-32-32-58 28 8 38 30 32 58Z" stroke="#413D5E" stroke-width="4" fill="#C2DDAE" fill-opacity=".72" stroke-linecap="round"/>
+  <path d="M390 400c-5-80-30-140-70-170m65 90c28-8 42-26 44-50-28 4-44 22-44 50Zm-25-50c-22-12-30-30-26-52 24 7 32 26 26 52Z" stroke="#413D5E" stroke-width="4" fill="#B49CCE" fill-opacity=".62" stroke-linecap="round"/>
+  <path d="M120 380c40 30 200 30 250 0-30-12-210-12-250 0Z" fill="#B49CCE" opacity=".28"/>
+  <path d="M170 370c-20-70 0-130 70-140 70 10 90 70 70 140Z" fill="#B49CCE"/>
+  <path d="M210 250c20 40 60 40 80 0" stroke="#E5E5F5" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <circle cx="240" cy="170" r="42" fill="#EBDFCE"/>
+  <path d="M196 180c-14-60 26-90 52-86 40 2 62 40 40 90-6-30-20-40-44-40-30 0-40 14-48 36Z" fill="#413D5E"/>
+  <path d="M222 178q8 6 16 0m12 0q8 6 16 0m-32 22q9 7 18 0" stroke="#413D5E" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>

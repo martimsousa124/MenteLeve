@@ -1,0 +1,185 @@
+main {
+  overflow-x: clip;
+}
+
+main > section {
+  position: relative;
+  isolation: isolate;
+}
+
+main > section > .w,
+footer > .w {
+  position: relative;
+  z-index: 1;
+}
+
+.section-wave {
+  position: absolute;
+  z-index: 0;
+  top: clamp(-132px, -9vw, -72px);
+  left: 0;
+  display: block;
+  width: 100%;
+  height: clamp(165px, 18vw, 250px);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-wave .wave-back {
+  fill: var(--wave-back, var(--color-lilac));
+  opacity: .46;
+}
+
+.section-wave .wave-mid {
+  fill: var(--wave-mid, var(--color-sage));
+  opacity: .6;
+}
+
+.section-wave .wave-front {
+  fill: var(--wave-front, var(--bg));
+}
+
+.section-wave .wave-line {
+  fill: none;
+  stroke: var(--wave-line, var(--color-midnight));
+  stroke-linecap: round;
+  stroke-width: 2.5;
+  opacity: .18;
+}
+
+.section-wave.wave-active .wave-back {
+  animation: wave-drift-back var(--wave-back-duration, 27s) ease-in-out infinite var(--wave-direction, alternate);
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.section-wave.wave-active .wave-mid {
+  animation: wave-drift-mid var(--wave-mid-duration, 21s) ease-in-out infinite var(--wave-direction, alternate);
+  animation-delay: var(--wave-mid-delay, -8s);
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.section-wave.wave-active .wave-front {
+  animation: wave-drift-front var(--wave-front-duration, 32s) ease-in-out infinite var(--wave-direction, alternate);
+  animation-delay: var(--wave-front-delay, -13s);
+  transform-box: fill-box;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.section-wave.wave-active .wave-line {
+  animation: wave-line-drift var(--wave-line-duration, 25s) ease-in-out infinite var(--wave-direction, alternate);
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.wave-1 { --wave-back: #B49CCE; --wave-mid: #C2DDAE; --wave-front: #E5E5F5; --wave-line: #413D5E; --wave-back-duration: 25s; --wave-mid-duration: 19s; }
+.wave-2 { --wave-back: #EBDFCE; --wave-mid: #B49CCE; --wave-front: #FBF9F4; --wave-line: #413D5E; --wave-back-duration: 29s; --wave-front-duration: 27s; --wave-direction: alternate-reverse; }
+.wave-3 { --wave-back: #C2DDAE; --wave-mid: #E5E5F5; --wave-front: #EBDFCE; --wave-line: #413D5E; --wave-front-duration: 24s; }
+.wave-4 { --wave-back: #B49CCE; --wave-mid: #C2DDAE; --wave-front: #FBF9F4; --wave-line: #413D5E; --wave-direction: alternate-reverse; --wave-line-duration: 31s; }
+.wave-5 { --wave-back: #EBDFCE; --wave-mid: #B49CCE; --wave-front: #E5E5F5; --wave-line: #413D5E; --wave-mid-duration: 26s; --wave-direction: alternate-reverse; }
+.wave-6 { --wave-back: #C2DDAE; --wave-mid: #EBDFCE; --wave-front: #E5E5F5; --wave-line: #413D5E; --wave-front-duration: 28s; --wave-direction: alternate-reverse; }
+.wave-7 { --wave-back: #B49CCE; --wave-mid: #E5E5F5; --wave-front: #EBDFCE; --wave-line: #413D5E; --wave-back-duration: 31s; --wave-front-duration: 29s; }
+.wave-8 { --wave-back: #B49CCE; --wave-mid: #C2DDAE; --wave-front: #413D5E; --wave-line: #EBDFCE; --wave-mid-duration: 30s; }
+.wave-9 { --wave-back: #C2DDAE; --wave-mid: #B49CCE; --wave-front: #FBF9F4; --wave-line: #413D5E; --wave-back-duration: 23s; --wave-direction: alternate-reverse; }
+.wave-10 { --wave-back: #EBDFCE; --wave-mid: #C2DDAE; --wave-front: #E5E5F5; --wave-line: #413D5E; --wave-front-duration: 27s; }
+.wave-11 { --wave-back: #C2DDAE; --wave-mid: #EBDFCE; --wave-front: #FBF9F4; --wave-line: #413D5E; --wave-mid-duration: 24s; --wave-direction: alternate-reverse; }
+.wave-12 { --wave-back: #B49CCE; --wave-mid: #C2DDAE; --wave-front: #EBDFCE; --wave-line: #413D5E; --wave-back-duration: 28s; }
+.wave-13 { --wave-back: #C2DDAE; --wave-mid: #B49CCE; --wave-front: #FBF9F4; --wave-line: #413D5E; --wave-front-duration: 30s; --wave-direction: alternate-reverse; }
+.wave-14 { --wave-back: #EBDFCE; --wave-mid: #C2DDAE; --wave-front: #E5E5F5; --wave-line: #413D5E; --wave-mid-duration: 25s; }
+.wave-footer {
+  top: -32px;
+  height: 60px;
+  --wave-back: #C2DDAE;
+  --wave-mid: #8FA78A;
+  --wave-front: #413D5E;
+  --wave-back-duration: 30s;
+}
+
+.wave-footer .wave-back,
+.wave-footer .wave-mid {
+  opacity: 1;
+}
+
+.wave-footer .wave-line {
+  display: none;
+}
+
+.section-wave.wave-footer.wave-active .wave-back {
+  animation: footer-wave-back 30s ease-in-out infinite alternate;
+}
+
+.section-wave.wave-footer.wave-active .wave-mid {
+  animation: footer-wave-mid 25s ease-in-out infinite alternate-reverse;
+}
+
+.section-wave.wave-footer.wave-active .wave-front {
+  animation: footer-wave-front 32s ease-in-out infinite alternate;
+}
+
+@keyframes wave-drift-back {
+  from { transform: translate(-2.2%, 10px) scaleY(.96); }
+  to { transform: translate(2.2%, -12px) scaleY(1.06); }
+}
+
+@keyframes wave-drift-mid {
+  from { transform: translate(3.2%, -10px) scaleY(1.08); }
+  to { transform: translate(-3.2%, 13px) scaleY(.93); }
+}
+
+@keyframes wave-drift-front {
+  from { transform: translate(-1.6%, 12px) scaleY(.95); }
+  to { transform: translate(1.6%, -9px) scaleY(1.04); }
+}
+
+@keyframes wave-line-drift {
+  from { transform: translate(2%, 4px); opacity: .12; }
+  to { transform: translate(-2%, -8px); opacity: .25; }
+}
+
+@keyframes footer-wave-back {
+  from { transform: translate(-.45%, 1px); }
+  to { transform: translate(.45%, -1px); }
+}
+
+@keyframes footer-wave-mid {
+  from { transform: translate(.55%, -1px); }
+  to { transform: translate(-.55%, 1px); }
+}
+
+@keyframes footer-wave-front {
+  from { transform: translate(-.35%, .5px); }
+  to { transform: translate(.35%, -.5px); }
+}
+
+@media (max-width: 760px) {
+  .section-wave {
+    top: -76px;
+    height: 170px;
+  }
+
+  .section-wave .wave-line {
+    stroke-width: 3.5;
+  }
+
+  @keyframes wave-drift-back {
+    from { transform: translate(-3%, 8px) scaleY(.96); }
+    to { transform: translate(3%, -10px) scaleY(1.05); }
+  }
+
+  @keyframes wave-drift-mid {
+    from { transform: translate(4%, -8px) scaleY(1.06); }
+    to { transform: translate(-4%, 10px) scaleY(.94); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-wave.wave-active * {
+    animation: none !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+}
